@@ -20,13 +20,13 @@ const Nfts = ({totalNft,myNft,page,mintedNft, account, setAccount, ranNum1,ranNu
                 let response = await axios.get(
                     `${process.env.REACT_APP_JSON_URL}/${tokenId}.json`
                 );
-                console.log(response);
+                // console.log(response);
                 nftArray.push({tokenId, metadata: response.data});
             }
             setNfts(nftArray);
 
         }catch(error){
-            console.log(error);
+            console.error(error);
         }
     };
 
@@ -53,9 +53,9 @@ const Nfts = ({totalNft,myNft,page,mintedNft, account, setAccount, ranNum1,ranNu
         }
         return pageArray;};
 
-        useEffect(() => {
-            console.log(nfts);
-          }, [nfts]);
+        // useEffect(() => {
+        //     console.log(nfts);
+        //   }, [nfts]);
           
         useEffect(() => {
             getNfts(1);

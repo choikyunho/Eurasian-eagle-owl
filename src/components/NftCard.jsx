@@ -2,8 +2,8 @@ import { FaChessRook } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const NftCard = ({tokenId,metadata,mintedNft,ranNum1,ranNum2})=>{
-  console.log(ranNum1);
-  console.log(ranNum2);
+  // console.log(ranNum1);
+  // console.log(ranNum2);
     return(
     <div className="relative rounded-2xl bg-gray-800 pb-4">
         {parseInt(mintedNft)<tokenId &&(ranNum1!==ranNum2) && (

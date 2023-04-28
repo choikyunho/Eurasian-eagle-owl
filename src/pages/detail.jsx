@@ -24,7 +24,7 @@ const Detail = () => {
     getNft();
   }, []);
 
-  useEffect(() => console.log(metadata), [metadata]);
+  // useEffect(() => console.log(metadata), [metadata]);
 
   return (
     <div className="flex flex-col xl: justify-center items-center py-16 bg-gray-900 mt-0">

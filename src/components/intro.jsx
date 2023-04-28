@@ -1,9 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaEarlybirds } from "react-icons/fa";
 import { Link } from "react-router-dom";
-// import png from "../../public/images/imag2.png"
+
 
 function Intro({imgSrc1,imgSrc2,ranNum1,ranNum2}) {
+  const [png,setPng]=useState(0);
+  const viewPng=()=>{
+    if(ranNum1==ranNum2)
+    setPng(1)
+  }
+  console.log(png);
+  console.log(setPng);
+
+  useEffect(()=>{
+    viewPng();
+  },[png])
 
   return (
     <div className="bg-gradient-to-b from-transparent to-red-300 mt-3">
@@ -38,10 +49,24 @@ function Intro({imgSrc1,imgSrc2,ranNum1,ranNum2}) {
         </div>
         {/* /////////////////////////////////////////////////////////////////////////////////////////// */}
 
-        <div className="flex">
-            <img className= "h-60" src={`${process.env.PUBLIC_URL}/images/imag.png`}/>
-            <img className= "h-60 mr-5" src={`${process.env.PUBLIC_URL}/images/imag.png`}/>
-        </div>
+        {/* ///////////////////////////////////////////  TEST  //////////////////////////////////////// */}
+        {png==1 ?
+          (
+            <div className="flex">
+            <img className= "h-60" src={`${process.env.PUBLIC_URL}/images/imag2.png`}/>
+            <img className= "h-60" src={`${process.env.PUBLIC_URL}/images/imag2.png`}/>
+            <img className= "h-60 mr-5" src={`${process.env.PUBLIC_URL}/images/imag2.png`}/>
+            </div>
+          )
+          :( 
+            <div className="flex">
+             <img className= "h-60" src={`${process.env.PUBLIC_URL}/images/imag.png`}/>
+             <img className= "h-60 mr-5" src={`${process.env.PUBLIC_URL}/images/imag.png`}/>
+            </div>
+           )} 
+
+        {/* /////////////////////////////////////////////////////////////////////////////////////////// */}
+
 
       </div>
 

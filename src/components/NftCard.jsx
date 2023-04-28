@@ -7,7 +7,7 @@ const NftCard = ({tokenId,metadata,mintedNft,ranNum1,ranNum2})=>{
     return(
     <div className="relative rounded-2xl bg-gray-800 pb-4">
         {parseInt(mintedNft)<tokenId &&(ranNum1!==ranNum2) && (
-                  <div className="absolute bg-black w-full h-full bg-opacity-50 
+                  <div className="absolute bg-black w-full h-full  
                     rounded-2xl flex justify-center items-center text-4xl font-bold">
                         Not minted.
                   </div>)}

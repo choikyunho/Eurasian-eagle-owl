@@ -15,13 +15,20 @@ const Nfts = ({totalNft,myNft,page,mintedNft, account, setAccount, ranNum1,ranNu
             setNfts();
 /////화면에 나타낼 nft 개수 조절////////////////
             for(let i =0; i<8; i++){
-                const tokenId = i+1 +(p-1)*8;
+
+              const tokenId = i+1 +(p-1)*8;
+              // const tokenId = i+1 +(p-1)*8;
+              if(tokenId<37){
 
                 let response = await axios.get(
                     `${process.env.REACT_APP_JSON_URL}/${tokenId}.json`
                 );
-                // console.log(response);
+                console.log(response);
                 nftArray.push({tokenId, metadata: response.data});
+              }
+              else{
+                break
+              }
             }
             setNfts(nftArray);
 
@@ -53,9 +60,9 @@ const Nfts = ({totalNft,myNft,page,mintedNft, account, setAccount, ranNum1,ranNu
         }
         return pageArray;};
 
-        // useEffect(() => {
-        //     console.log(nfts);
-        //   }, [nfts]);
+        useEffect(() => {
+            console.log(nfts);
+          }, [nfts]);
           
         useEffect(() => {
             getNfts(1);

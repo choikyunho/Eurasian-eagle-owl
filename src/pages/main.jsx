@@ -21,8 +21,8 @@ function Main({ account, setAccount }) {
     const [mintedNft, setMintedNft] = useState(0);
     const [myNft, setMyNft] = useState(0);
       // console.log(myNft);
-    const [page, setPage] = useState(2);
-    // console.log(page);
+    const [page, setPage] = useState(1);
+    console.log(page);
     const getTotalNft = async () => {
       try {
         if (!contract) return;
@@ -39,7 +39,7 @@ function Main({ account, setAccount }) {
         if (!contract) return;
         const response = await contract.methods.totalSupply().call();
         setMintedNft(response);
-        setPage(parseInt((parseInt(response)-1)/5) + 1);
+        setPage(parseInt((parseInt(response)-1)/3.5) + 1);
         // console.log(response);
       } catch (error) {
         console.error(error);

@@ -11,6 +11,13 @@ const NftCard = ({tokenId,metadata,mintedNft,ranNum1,ranNum2})=>{
                     rounded-2xl flex justify-center items-center text-4xl font-bold">
                         Not minted.
                   </div>)}
+
+                            {/* <div className="relative rounded-2xl bg-gray-800 pb-4">
+         {parseInt(mintedNft)<tokenId &&(ranNum1!==ranNum2) && (
+                   <div className="absolute w-full h-full  
+                     rounded-2xl flex justify-center items-center text-4xl font-bold">
+                        Not minted.
+                  </div>)} */}
                   
       <div >
         <img className="rounded-t-2xl w-[300px]" src={metadata.image} alt={metadata.name} />

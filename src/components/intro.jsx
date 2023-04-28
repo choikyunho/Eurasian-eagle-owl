@@ -9,8 +9,8 @@ function Intro({imgSrc1,imgSrc2,ranNum1,ranNum2}) {
     if(ranNum1==ranNum2)
     setPng(1)
   }
-  console.log(png);
-  console.log(setPng);
+  // console.log(png);
+  // console.log(setPng);
 
   useEffect(()=>{
     viewPng();
@@ -59,10 +59,17 @@ function Intro({imgSrc1,imgSrc2,ranNum1,ranNum2}) {
             </div>
           )
           :( 
+            <>
             <div className="flex">
              <img className= "h-60" src={`${process.env.PUBLIC_URL}/images/imag.png`}/>
              <img className= "h-60 mr-5" src={`${process.env.PUBLIC_URL}/images/imag.png`}/>
             </div>
+            <div>
+              <div> </div>
+            </div>
+
+            </>
+              
            )} 
 
         {/* /////////////////////////////////////////////////////////////////////////////////////////// */}
